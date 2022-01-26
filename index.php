@@ -7,7 +7,6 @@
             require("views/main.php");
             break;
         case "post":
-            echo "i égal 1";
             break;
         default:
             require("views/main.php");

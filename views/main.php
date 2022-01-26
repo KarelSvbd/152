@@ -26,16 +26,7 @@
 									  </div>
 
 								   
-									  <div class="panel panel-default">
-										<div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Bootstrap Examples</h4></div>
-										  <div class="panel-body">
-											<div class="list-group">
-											  <a href="http://usebootstrap.com/theme/facebook" class="list-group-item">Modal / Dialog</a>
-											  <a href="http://usebootstrap.com/theme/facebook" class="list-group-item">Datetime Examples</a>
-											  <a href="http://usebootstrap.com/theme/facebook" class="list-group-item">Data Grids</a>
-											</div>
-										  </div>
-									  </div>
+									  
 								   
 									  <div class="well"> 
 										   <form class="form-horizontal" role="form">
@@ -46,20 +37,6 @@
 											<button class="btn btn-primary pull-right" type="button">Post</button><ul class="list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul>
 										  </form>
 									  </div>
-								   
-									  
-								   
-									  <div class="panel panel-default">
-										<div class="panel-heading"><h4>What Is Bootstrap?</h4></div>
-										<div class="panel-body">
-											Bootstrap is front end frameworkto 
-		build custom web applications that are fast, responsive &amp; intuitive.
-		 It consist of CSS and HTML for typography, forms, buttons, tables, 
-		grids, and navigation along with custom-built jQuery plug-ins and 
-		support for responsive layouts. With dozens of reusable components for 
-		navigation, pagination, labels, alerts etc..                          </div>
-									  </div>
-
 										
 								   
 								  </div>
@@ -73,50 +50,12 @@
 										  </form>
 										</div>
 
-									   <div class="panel panel-default">
-										 <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Portlet Heading</h4></div>
-										  <div class="panel-body">
-											<ul class="list-group">
-											<li class="list-group-item">Modals</li>
-											<li class="list-group-item">Sliders / Carousel</li>
-											<li class="list-group-item">Thumbnails</li>
-											</ul>
-										  </div>
-									   </div>
-									
-									   <div class="panel panel-default">
-										<div class="panel-thumbnail"><img src="assets/img/bg_4.jpg" class="img-responsive"></div>
-										<div class="panel-body">
-										  <p class="lead">Social Good</p>
-										  <p>1,200 Followers, 83 Posts</p>
-										  
-										  <p>
-											<img src="assets/img/photo.jpg" height="28px" width="28px">
-											<img src="assets/img/photo.png" height="28px" width="28px">
-											<img src="assets/img/photo_002.jpg" height="28px" width="28px">
-										  </p>
-										</div>
-									  </div>
+									   
 									
 								  </div>
 							   </div><!--/row-->
 							  
-								<div class="row">
-								  <div class="col-sm-6">
-									<a href="#">Twitter</a> <small class="text-muted">|</small> <a href="#">Facebook</a> <small class="text-muted">|</small> <a href="#">Google+</a>
-								  </div>
-								</div>
-							  
-								<div class="row" id="footer">    
-								  <div class="col-sm-6">
-									
-								  </div>
-								  <div class="col-sm-6">
-									<p>
-									<a href="#" class="pull-right">�Copyright 2013</a>
-									</p>
-								  </div>
-								</div>
+								
 							  
 							  <hr>
 							  
