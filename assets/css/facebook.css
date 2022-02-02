@@ -285,3 +285,54 @@ small.text-muted {
     padding-left:3px;
   }
 }
+
+.formPost{
+  width: 80%;
+  background-color: rgb(255, 255, 255);
+  border: 1px black solid;
+  border-radius: 10px;
+  height: 25%;
+  margin-top: 5%;
+  margin-left: 10%;
+  float: left;
+}
+
+.imgProfilPost{
+  width: 9%;
+  margin-top: 2%;
+  float: left;
+}
+
+.contenuPost{
+  width: 85%;
+  border: none;
+  margin-left: 20px;
+  float: left;
+  margin-top: 8%;
+  font-size: 17px;
+  border-bottom: 1px solid gray;
+}
+
+.btnAvecIcon{
+  float: left;
+  margin-top: 5%;
+  margin-left: 20px;
+  border: none;
+  background-color: white;
+}
+
+.containerAvecIcon{
+  margin-top: 50px;
+  float: left;
+}
+
+.containerBtnPost{
+  float: right;
+  margin-right: 5%;
+  margin-top: 50px;
+}
+
+.btnPublish{
+  background-color: #3B5999;
+  color: #ffffff;
+}
