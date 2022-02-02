@@ -1,5 +1,7 @@
 <?php
-    $uploaddir = '/var/www/uploads/';
+    //position des images
+    //https://www.php.net/manual/fr/features.file-upload.post-method.php
+    $uploaddir = 'assets/uploads/';
     $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
     echo '<pre>';
@@ -12,7 +14,7 @@
     }
 
 echo 'Voici quelques informations de débogage :';
-print_r($_FILES['userfile']['tmp_name']);
+print_r($_FILES['userfile']);
 
 echo '</pre>';
     
@@ -25,7 +27,7 @@ echo '</pre>';
             <button type="file" class="btnAvecIcon btn" name="btnImage">
                 <i class="glyphicon glyphicon-picture"></i>
             </button>
-            <input type="file" name="userfile[]" id="file" class="glyphicon glyphicon-user btnAvecIcon" accept="image/png, image/jpeg">
+            <input type="file" multiple name="userfile" id="userfile" class="glyphicon glyphicon-user btnAvecIcon" accept="image/png, image/jpeg">
             <button type="submit" class="btnAvecIcon btn" name="btnPosition">
                 <i class="glyphicon glyphicon-map-marker"></i>
             </button>
