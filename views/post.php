@@ -1,7 +1,11 @@
 <?php
     //position des images
     //https://www.php.net/manual/fr/features.file-upload.post-method.php
-    $uploaddir = 'assets/uploads/';
+    //print_r($_FILES['userfile']);
+
+    
+
+    /*$uploaddir = 'assets/uploads/';
     $uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
 
     echo '<pre>';
@@ -13,21 +17,23 @@
           Voici plus d'informations :\n";
     }
 
-echo 'Voici quelques informations de débogage :';
-print_r($_FILES['userfile']);
+    echo 'Voici quelques informations de débogage :';
 
-echo '</pre>';
-    
+    echo '</pre>';*/
+
+
+    //$valeur = $_FILES['userfile']['name'];
 ?>
 <div class="container formPost">
-    <form method="POST">
+    <form method="POST" action="#" enctype="multipart/form-data" >
         <img src="assets/img/logoCFPT.png" class="imgProfilPost"/>
         <input type="text" class="contenuPost" name="contenuPost" placeholder="Write something..."/>
         <div class="containerAvecIcon">
+        
             <button type="file" class="btnAvecIcon btn" name="btnImage">
-                <i class="glyphicon glyphicon-picture"></i>
+                <i class="glyphicon glyphicon-user"></i>
             </button>
-            <input type="file" multiple name="userfile" id="userfile" class="glyphicon glyphicon-user btnAvecIcon" accept="image/png, image/jpeg">
+            <input type="file" multiple name="userfile" id="userfile" class="glyphicon glyphicon-picture btnAvecIcon" accept="image/png, image/jpeg">
             <button type="submit" class="btnAvecIcon btn" name="btnPosition">
                 <i class="glyphicon glyphicon-map-marker"></i>
             </button>
@@ -44,7 +50,7 @@ echo '</pre>';
             </button>
         </div>
         <?php
-        print_r($_FILES);
+        print_r($valeur);
         
         ?>
         
