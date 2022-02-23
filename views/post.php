@@ -33,7 +33,7 @@
             <button type="file" class="btnAvecIcon btn" name="btnImage">
                 <i class="glyphicon glyphicon-user"></i>
             </button>
-            <input type="file" multiple name="userfile" id="userfile" class="glyphicon glyphicon-picture btnAvecIcon" accept="image/png, image/jpeg">
+            <input type="file" multiple name="userfile[]" id="userfile" class="glyphicon glyphicon-picture btnAvecIcon" accept="image/png, image/jpeg">
             <button type="submit" class="btnAvecIcon btn" name="btnPosition">
                 <i class="glyphicon glyphicon-map-marker"></i>
             </button>

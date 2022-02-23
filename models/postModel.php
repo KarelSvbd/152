@@ -21,12 +21,7 @@ function recuperationDernierPost(){
 }
 
 function envoieNouveauMedia($typeMedia, $nomMedia, $idPost){
-    $sql = MonPdo::getInstance()->prepare("INSERT INTO MEDIA (typeMedia, nomMedia, creationDate, modificationDate, idPost) VALUES(:typeMedia, :nomMedia, :creationDate, :modificationDate, :idPost);");
-    $sql->bindParam(':typeMedia', $typeMedia);
-    $sql->bindParam(':nomMedia', $nomMedia);
-    $sql->bindParam(':creationDate', date('d-m-y h:i:s'));
-    $sql->bindParam(':modificationDate', date('d-m-y h:i:s'));
-    $sql->bindParam(':idPost', $idPost);
+    $sql = MonPdo::getInstance()->prepare("INSERT INTO MEDIA (typeMedia, nomMedia, idPost) VALUES ('".$typeMedia."', '" . $nomMedia . "', ". $idPost.")");
     $sql->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'MEDIA');
     $sql->execute();
 }

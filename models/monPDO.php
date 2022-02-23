@@ -12,9 +12,9 @@ class MonPdo
 //private static $mdp = 'gestion-pret1234';
 
 private static $serveur = 'mysql:host=localhost';
-private static $bdd = 'dbname=stock';
-private static $user = 'adminStock';
-private static $mdp = 'Super1234';
+private static $bdd = 'dbname=152';
+private static $user = 'admin';
+private static $mdp = 'Super';
 
 private static $monPdo;
 private static $unPdo = null;
