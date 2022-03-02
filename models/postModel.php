@@ -5,10 +5,7 @@ function creationPost($commentaire, $nomMedia, $typeMedia){
 }
 
 function envoieNouveauPost($commentaire){
-    $sql = MonPdo::getInstance()->prepare("INSERT INTO POST (commentaire, creationDate, modificationDate) VALUES(:commentaire, :creationDate, :modificationDate);");
-    $sql->bindParam(':commentaire', $commentaire);
-    $sql->bindParam(':creationDate', date('d-m-y h:i:s'));
-    $sql->bindParam(':modificationDate', date('d-m-y h:i:s'));
+    $sql = MonPdo::getInstance()->prepare("INSERT INTO POST (commentaire) VALUES('".$commentaire."');");
     $sql->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'POST');
     $sql->execute();
 }
@@ -25,4 +22,19 @@ function envoieNouveauMedia($typeMedia, $nomMedia, $idPost){
     $sql->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'MEDIA');
     $sql->execute();
 }
+
+function recuperationTousPost(){
+    $sql = MonPdo::getInstance()->prepare("SELECT * FROM POST");
+    $sql->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'POST');
+    $sql->execute();
+    return $sql->fetchAll();
+}
+
+function recuperationImagePost($idPost){
+    $sql = MonPdo::getInstance()->prepare("SELECT nomMedia FROM MEDIA WHERE idPost = ".$idPost."");
+    $sql->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'POST');
+    $sql->execute();
+    return $sql->fetchAll();
+}
+
 ?>

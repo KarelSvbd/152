@@ -256,6 +256,13 @@ small.text-muted {
 
 }
 
+.poste{
+  height: 300px;
+  width: 80%;
+  background-color: #dedede;
+  border: 1px solid black;
+  float: left;
+}
 
 /*
  * off canvas sidebar

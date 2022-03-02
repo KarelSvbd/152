@@ -49,7 +49,9 @@
 											<h1>Bienvenue</h1>
 										  </form>
 										</div>
-
+										<?php 
+											affichagePosts();
+										?>
 									   
 									
 								  </div>

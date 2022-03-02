@@ -7,6 +7,7 @@
 
     switch ($_GET["page"]) {
         case "home":
+            require("controllers/main-controller.php");
             require("views/main.php");
             break;
         case "post":
