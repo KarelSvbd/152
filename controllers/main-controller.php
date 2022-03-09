@@ -16,8 +16,8 @@
     }
 
     function affichagePosts(){
-        for($i = 0; $i < count(recuperationTousPost()); $i++){
-            createPost("assets/uploads/DiagrameMainVr.jpg", recuperationTousPost()[$i]["commentaire"]);
+        for($i = 1; $i < count(recuperationTousPost()) + 1; $i++){
+            createPost("assets/uploads/" . recuperationImagePost($i)[0]["nomMedia"] . "." .  recuperationImagePost($i)[0]["typeMedia"], recuperationTousPost()[$i]["commentaire"]);
         }
     }
 

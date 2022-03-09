@@ -27,7 +27,6 @@
 
     echo "<div style='margin-top:100px'>test</div>";
     $valeur = "";
-    envoieNouveauPost("test");
     if ($_FILES['userfile']['name'] !=""){
         // Where the file is going to be stored
         for($i = 0; $i < count($_FILES['userfile']['name']); $i++){
@@ -41,27 +40,37 @@
             $path_filename_ext = $target_dir.$filename.".".$ext;
             
             if($ext == "png" || $ext == "jpg" || $ext == "jfif"){
-                $nomUnique = $target_dir + uniqid()+ "." + $ext;
-                var_dump($nomUnique);
+                $idUnique = uniqid();
+                $nomUnique = $target_dir . $idUnique . "." . $ext;
                 //rename($temp_name, $nomUnique);
                 move_uploaded_file($temp_name,$path_filename_ext);
                 if(rename($path_filename_ext, $nomUnique)){
-                    var_dump($nomUnique);
+                    //Envoie du post et du media dans la base de données
+                    if(envoieNouveauPost($contenuPost) && envoieNouveauMedia($ext, $idUnique, recuperationDernierPost()[0][0])){
+                        $valeur = "Le fichier a été envoyé avec succès";
+                    }
+                    else{
+                        error_log("Erreur lors de l'envoie du media");
+                        var_dump("Erreur lors de l'envoie du media");
+                    }
                 }
                 else
                 {
-                    var_dump("non");
+                    error_log("erreur lors du rename");
                 }
-                    $valeur = "Le fichier a été envoyé avec succès";
-                    
-                    //createPost($filename, $contenuPost);
-                    envoieNouveauMedia($ext, $filename, recuperationDernierPost()[0][0]);
-                }
-                else{
-                    $valeur = "Ce type de fichier n'est pas prit en charge";
-                }
+                
             }
+            else{
+                $valeur = "Ce type de fichier n'est pas prit en charge";
+            }
+        }
             
+    }
+    if($_FILES['uservideo'] !=""){
+        var_dump("video ok");
+    }
+    else{
+        var_dump("video ko");
     }
 
     $commentaire = filter_input(INPUT_POST, 'contenuPost', FILTER_SANITIZE_STRING);

@@ -5,6 +5,9 @@
 
     require("models/monPDO.php");
 
+    //require("classes/Media.php");
+    //require("classes/Post.php");
+
     switch ($_GET["page"]) {
         case "home":
             require("controllers/main-controller.php");

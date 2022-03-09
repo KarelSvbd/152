@@ -37,8 +37,7 @@
             <button type="submit" class="btnAvecIcon btn" name="btnPosition">
                 <i class="glyphicon glyphicon-map-marker"></i>
             </button>
-            <button type="submit" class="btnAvecIcon btn" name="btnFichier">
-                <i class="glyphicon glyphicon-file"></i>
+            <input type="file" multiple name="uservideo" id="uservideo" class="glyphicon glyphicon-facetime-video" accept="video/mp4,video/x-m4v,video/*">
             </button>
         </div>
         <div class="containerBtnPost">
