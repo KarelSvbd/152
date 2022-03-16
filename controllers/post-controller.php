@@ -6,27 +6,9 @@
 
     require("models/postModel.php");
 
-    if (isset($_POST['btnImage'])) {
-        
-    }
-    else if (isset($_POST['btnSmiley'])) {
-        
-    }
-    else if (isset($_POST['btnPosition'])) {
-        
-    }
-    else if (isset($_POST['btnFichier'])) {
-        
-    }
-    else if (isset($_POST['btnPostBoost'])) {
-        
-    }
-    else if (isset($_POST['btnPublish'])) {
-        
-    }
-
     echo "<div style='margin-top:100px'>test</div>";
     $valeur = "";
+    var_dump($_FILES['userfile']['name']);
     if ($_FILES['userfile']['name'] !=""){
         // Where the file is going to be stored
         for($i = 0; $i < count($_FILES['userfile']['name']); $i++){
@@ -39,7 +21,7 @@
             
             $path_filename_ext = $target_dir.$filename.".".$ext;
             
-            if($ext == "png" || $ext == "jpg" || $ext == "jfif"){
+            if($ext == "png" || $ext == "jpg" || $ext == "jfif" || $ext == "mp4" || $ext == "mp3"){
                 $idUnique = uniqid();
                 $nomUnique = $target_dir . $idUnique . "." . $ext;
                 //rename($temp_name, $nomUnique);
@@ -51,7 +33,6 @@
                     }
                     else{
                         error_log("Erreur lors de l'envoie du media");
-                        var_dump("Erreur lors de l'envoie du media");
                     }
                 }
                 else
@@ -60,20 +41,12 @@
                 }
                 
             }
-            else{
-                $valeur = "Ce type de fichier n'est pas prit en charge";
-            }
         }
             
     }
-    if($_FILES['uservideo'] !=""){
-        var_dump("video ok");
-    }
-    else{
-        var_dump("video ko");
-    }
 
     $commentaire = filter_input(INPUT_POST, 'contenuPost', FILTER_SANITIZE_STRING);
+    
     require("views/post.php");
 
 ?>

@@ -74,4 +74,27 @@ function recuperationImagePost($idPost){
     }
 }
 
+function recuperationMediaPost($idPost){
+    try{
+        $sql = MonPdo::getInstance()->prepare("SELECT nomMedia, typeMedia FROM MEDIA WHERE idPost = ".$idPost."");
+        $sql->setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'POST');
+        $sql->execute();
+        $response = $sql->fetchAll();
+        $return = array();
+        foreach($response as $element){
+            $return = array_merge($return, array(
+                "nomMedia" => $element["nomMedia"],
+                "typeMedia" => $element["typeMedia"]
+            ));
+        }
+        
+        return $return;
+    }
+    catch (PDOException $e) {
+        $sql->rollback();
+        error_log($e->getMessage());
+        return false;
+    }
+}
+
 ?>

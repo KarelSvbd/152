@@ -1,7 +1,4 @@
-
-
-				  
-					<!-- main right col -->
+ 					<!-- main right col -->
 					<div class="column col-sm-10 col-xs-11" id="main">
 					  
 						<div class="padding">
