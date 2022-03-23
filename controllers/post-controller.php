@@ -6,12 +6,13 @@
 
     require("models/postModel.php");
 
-    echo "<div style='margin-top:100px'>test</div>";
     $valeur = "";
-    var_dump($_FILES['userfile']['name']);
     if ($_FILES['userfile']['name'] !=""){
+        envoieNouveauPost($contenuPost);
         // Where the file is going to be stored
         for($i = 0; $i < count($_FILES['userfile']['name']); $i++){
+            
+    var_dump($_FILES['userfile']['name']);
             $target_dir = "assets/uploads/";
             $file = $_FILES['userfile']['name'][$i];
             $path = pathinfo($file);
@@ -28,7 +29,7 @@
                 move_uploaded_file($temp_name,$path_filename_ext);
                 if(rename($path_filename_ext, $nomUnique)){
                     //Envoie du post et du media dans la base de données
-                    if(envoieNouveauPost($contenuPost) && envoieNouveauMedia($ext, $idUnique, recuperationDernierPost()[0][0])){
+                    if(envoieNouveauMedia($ext, $idUnique, recuperationDernierPost()[0][0])){
                         $valeur = "Le fichier a été envoyé avec succès";
                     }
                     else{
@@ -42,7 +43,8 @@
                 
             }
         }
-            
+         
+        
     }
 
     $commentaire = filter_input(INPUT_POST, 'contenuPost', FILTER_SANITIZE_STRING);

@@ -8,14 +8,17 @@
     //require("classes/Media.php");
     //require("classes/Post.php");
 
+
     switch ($_GET["page"]) {
         case "home":
             require("controllers/main-controller.php");
-            require("views/main.php");
             break;
         case "post":
             require("controllers/post-controller.php");
             
+            break;
+        case "modifyPost":
+            require("controllers/modifyPost-controller.php");
             break;
         default:
             require("views/main.php");
